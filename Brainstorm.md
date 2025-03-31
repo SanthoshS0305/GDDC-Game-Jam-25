@@ -6,6 +6,7 @@
 2. Explore stages of grief
 3. Godot
 ---
+
 ## Characters
 1. MC: Main Character
    - give that mf a gun.
