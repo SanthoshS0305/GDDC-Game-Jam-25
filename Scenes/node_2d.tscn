@@ -1,6 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://vpaemcq2x0tk"]
 
+<<<<<<< HEAD:Scenes/node_2d.tscn
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="1_2nx13"]
+=======
+[ext_resource type="PackedScene" uid="uid://duqahwsa2ci8w" path="res://player.tscn" id="2_acp0x"]
+>>>>>>> main:node_2d.tscn
 [ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="2_fi10l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6is84"]
@@ -36,6 +40,8 @@ position = Vector2(50, 418.25)
 shape = SubResource("RectangleShape2D_8i2ld")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
-position = Vector2(-22, -8.25)
-scale = Vector2(8.76563, 0.847656)
+position = Vector2(3, -2.25)
+scale = Vector2(9.00781, 0.847656)
 texture = ExtResource("2_fi10l")
+
+[node name="Player" parent="." instance=ExtResource("2_acp0x")]
