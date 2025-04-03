@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-var playerPos = Vector2.ZERO
+var player : Node2D
 var inRange = false
 var projSpeed = 600
 var projScale = 1
@@ -14,8 +14,8 @@ var timeSinceLastShot = 0
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
-	direction.x = playerPos.x - self.position.x
-	direction.y = playerPos.y - self.position.y
+	direction.x = player.position.x - self.position.x
+	direction.y = player.position.y - self.position.y
 	if(!inRange):
 		velocity = direction.normalized() * SPEED
 	else:

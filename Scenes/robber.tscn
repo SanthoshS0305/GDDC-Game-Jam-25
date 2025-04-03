@@ -73,7 +73,6 @@ _data = {
 }
 
 [node name="Robber" type="CharacterBody2D" node_paths=PackedStringArray("animation")]
-position = Vector2(756, 338)
 script = ExtResource("1_r1yfp")
 animation = NodePath("AnimationPlayer")
 
