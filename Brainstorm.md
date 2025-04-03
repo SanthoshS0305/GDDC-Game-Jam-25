@@ -65,20 +65,19 @@
 - PICTURES
   1. One picture at the beginning, another unlocked for each level cleared
   2. Intro/Denial Picture: Halloween Costume:
-       - SC dressed as a robber and MC dressed as a mummy. (foreshadows the first opponent being a robber)
+	   - SC dressed as a robber and MC dressed as a mummy. (foreshadows the first opponent being a robber)
   3. Anger Picture:
-       - Old picture of SC dressed as Santa while MC teases them
+	   - Old picture of SC dressed as Santa while MC teases them
   4. Bargaining Picture:
-       - TBD
+	   - TBD
   5. Depression Picture:
-       - The picture is just of MC (foreshadowing that MC is the enemy in this stage.)
-       - Taken BY SC
+	   - The picture is just of MC (foreshadowing that MC is the enemy in this stage.)
+	   - Taken BY SC
   6. Acceptance Picture:
-      - Picture from SC's birthday of them in front of their cake
-      - The two of them standing in front of some monument or smt just generic picture its not important
+	  - Picture from SC's birthday of them in front of their cake
+	  - The two of them standing in front of some monument or smt just generic picture its not important
 
 ### Level Rooms
 
 *Right Now, I'm thinking we should have all the levels just be in this living/dining/open kitchen area.
 Do we have the time to design multiple rooms? perhaps reskin the rooms with the same layout? TBD*
-
