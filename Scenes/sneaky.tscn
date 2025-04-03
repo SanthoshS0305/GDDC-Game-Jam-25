@@ -7,9 +7,11 @@
 size = Vector2(128, 131)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_inug8"]
-radius = 726.62
+radius = 425.327
 
 [node name="Sneaky" type="CharacterBody2D" node_paths=PackedStringArray("spawner")]
+scale = Vector2(0.8, 0.8)
+collision_mask = 2
 script = ExtResource("1_cwrrg")
 spawner = NodePath("ProjectileSpawn")
 
