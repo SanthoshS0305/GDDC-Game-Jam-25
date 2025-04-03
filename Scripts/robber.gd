@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		animation.play("Attack")
 	velocity = direction.normalized() * SPEED
+	self.rotation = direction.angle()
 
 	move_and_slide()
 
