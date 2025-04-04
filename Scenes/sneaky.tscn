@@ -7,7 +7,7 @@
 size = Vector2(128, 131)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_inug8"]
-radius = 425.327
+radius = 629.198
 
 [node name="Sneaky" type="CharacterBody2D" node_paths=PackedStringArray("spawner")]
 scale = Vector2(0.8, 0.8)

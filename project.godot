@@ -14,6 +14,10 @@ config/name="5 stages of beef"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
 [input]
 
 right={
