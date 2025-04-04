@@ -1,20 +1,35 @@
 extends CharacterBody2D
 
+@export var level: Node2D
+@export var waveCounter: RichTextLabel
 var speed: float = 200.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
+var killedEnemies = 0
+#For boss fight
 var can_shoot = true
+var inDialogue = false
+#Number of enemies to kil to pass the level
+var victoryCondition = 80
+#Signals to indicate game state
+signal victory
+signal died
+
+func _ready():
+	if (level != null):
+		level.newWave.connect(changeWaveCounter)
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 	
-	if Input.is_action_pressed("right"):
-		direction.x += 1
-	if Input.is_action_pressed("left"):
-		direction.x -= 1
-	if Input.is_action_pressed("down"):
-		direction.y += 1
-	if Input.is_action_pressed("up"):
-		direction.y -= 1
+	if !inDialogue:
+		if Input.is_action_pressed("right"):
+			direction.x += 1
+		if Input.is_action_pressed("left"):
+			direction.x -= 1
+		if Input.is_action_pressed("down"):
+			direction.y += 1
+		if Input.is_action_pressed("up"):
+			direction.y -= 1
 	
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
@@ -26,7 +41,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 
-	if Input.is_action_pressed("mouse_left"):  # Ensure "mouse_left" is mapped in InputMap
+	if Input.is_action_pressed("mouse_left") && can_shoot: # Ensure "mouse_left" is mapped in InputMap
 		if can_shoot == true:
 			shoot()
 			can_shoot = false
@@ -41,4 +56,18 @@ func shoot():
 	bullet.position = self.global_position
 	bullet.rotation = get_angle_to(get_global_mouse_position())
 	bullet.direction = (get_global_mouse_position() - global_position).normalized()
+	bullet.killedEnemy.connect(killEnemy)
 	get_parent().add_child(bullet)
+
+func killEnemy():
+	print("Killer killer")
+	killedEnemies += 1
+	if (killedEnemies > victoryCondition):
+		victory.emit()
+
+func death():
+	print("bleh")
+	died.emit()
+
+func changeWaveCounter(wave: int):
+	waveCounter.text = "Wave: " + str(wave)

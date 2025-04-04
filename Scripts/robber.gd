@@ -9,6 +9,9 @@ var restTime = 0.2
 var timeSinceLastAttack = 0
 @export var animation: AnimationPlayer
 
+func _ready() -> void:
+	get_node("Weapon").visible = false
+
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	velocity = Vector2.ZERO
@@ -28,10 +31,13 @@ func setPlayer(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
-		inRange = true;
-
+		inRange = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("exit")
 	if (body.name == "Player"):
-		inRange = false;
+		inRange = false
+
+
+func weaponHit(body: Node2D) -> void:
+	if (body.name == "Player"):
+		body.death()

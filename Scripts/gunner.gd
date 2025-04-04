@@ -7,7 +7,7 @@ var player: Node2D
 var inRange = false
 var projSpeed = 360
 var projScale = 1
-var reloadTime = 3
+var reloadTime = 1
 var timeSinceLastShot = 0
 @export var spawner: Node2D
 @onready var projectile = preload("res://Scenes/projectile.tscn")
@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 		if (timeSinceLastShot >= reloadTime):
 			attack()
 			timeSinceLastShot = 0
-	timeSinceLastShot += delta
+		timeSinceLastShot += delta
 	self.rotation = direction.angle()
 
 	move_and_slide()

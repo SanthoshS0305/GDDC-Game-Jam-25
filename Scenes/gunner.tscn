@@ -10,7 +10,8 @@ size = Vector2(128, 131)
 radius = 404.317
 
 [node name="Gunner" type="CharacterBody2D" node_paths=PackedStringArray("spawner")]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
 collision_mask = 0
 script = ExtResource("1_4t4gx")
 spawner = NodePath("ProjectileSpawn")
