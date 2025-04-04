@@ -1,11 +1,19 @@
 extends CharacterBody2D
 
+@export var level: Node2D
 var speed: float = 200.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var can_shoot = true
 var killedEnemies = 0
+#Number of enemies to kil to pass the level
+var victoryCondition = 35
+#Signals to indicate game state
 signal victory
 signal died
+
+func _ready():
+	if (level != null):
+		level.newWave.connect(changeWaveCounter)
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -50,3 +58,12 @@ func shoot():
 func killEnemy():
 	print("Killer killer")
 	killedEnemies += 1
+	if (killedEnemies > victoryCondition):
+		victory.emit()
+
+func death():
+	print("bleh")
+	died.emit()
+
+func changeWaveCounter():
+	pass

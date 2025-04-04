@@ -1,6 +1,8 @@
 extends Node2D
 @export var player: CharacterBody2D
 @export var enemyType: String
+@export var curLevel: int
+@export var nextLevel: String
 var enemy
 var completed = false
 ##Variables that affect the spawn timing and wave mechanic
@@ -16,16 +18,21 @@ var cameraX = 600
 var cameraY = 400
 ##For if the player is still alive
 var active = true
+#Signals new wave
+signal newWave
 @onready var randomizer = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemy = load("res://Scenes/" + enemyType + ".tscn")
+	player.victory.connect(victory)
+	player.died.connect(defeat)
+	Global.currentStage = curLevel
 
 
 func _physics_process(delta):
 	lastSpawn += delta
-	if (lastSpawn >= timeBetweenSpawns):
+	if (lastSpawn >= timeBetweenSpawns && active):
 		lastSpawn -= timeBetweenSpawns
 		spawn()
 		print("Wave: " + str(curWave))
@@ -33,6 +40,7 @@ func _physics_process(delta):
 			curWave += 1
 			enemiesSpawned = 0
 			timeBetweenSpawns -= 0.5
+			newWave.emit()
 	
 func spawn():
 	var leftOrRight = randomizer.randi_range(0, 1)
@@ -48,3 +56,9 @@ func spawn():
 	spawned.position = Vector2(distX, distY) + player.position
 	add_child(spawned)
 	enemiesSpawned += 1
+
+func victory():
+	get_tree().change_scene_to_file(nextLevel)
+
+func defeat():
+	print("Whomp whomp")

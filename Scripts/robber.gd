@@ -28,10 +28,13 @@ func setPlayer(body: Node2D) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if (body.name == "Player"):
-		inRange = true;
-
+		inRange = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	print("exit")
 	if (body.name == "Player"):
-		inRange = false;
+		inRange = false
+
+
+func weaponHit(body: Node2D) -> void:
+	if (body.name == "Player"):
+		body.death()

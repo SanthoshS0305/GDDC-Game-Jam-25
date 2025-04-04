@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dusfbpsk4vl58"]
+
+[ext_resource type="Script" path="res://Scripts/manager.gd" id="1_xhveg"]
+[ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_jlrqm"]
+
+[node name="Bargaining" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_xhveg")
+player = NodePath("Player")
+enemyType = "gunner"
+curLevel = 4
+
+[node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_jlrqm")]
+position = Vector2(602, 352)
+level = NodePath("..")
