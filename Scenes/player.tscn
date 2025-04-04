@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_qr7c6"]
 [ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="2_efbie"]
-[ext_resource type="Script" path="res://Scenes/WaveCounter.gd" id="3_i4ukd"]
+[ext_resource type="Script" path="res://Scripts/WaveCounter.gd" id="3_i4ukd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xing4"]
 size = Vector2(87, 87)
