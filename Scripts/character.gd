@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var level: Node2D
 @export var waveCounter: RichTextLabel
-var speed: float = 200.0
+var speed: float = 320.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var killedEnemies = 0
 #For boss fight
