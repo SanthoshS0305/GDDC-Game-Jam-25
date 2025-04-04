@@ -1,9 +1,17 @@
 # Script
 ## Characters:
-1. MC: Main Character (Name TBD)
-2. SC: Secondary Character (Name TBD) (Mentioned only)
+1. MC: Mirabelle
+2. SC: Colin (Mentioned only)
 ---
 ## Act 1: Denial
+
+Intro:
+
+*Mirabelle wakes in bed.*
+
+Mirabelle: *Yawns* What time is it? Is Colin home yet?
+
+
 
 ## Act 2: Anger
 
