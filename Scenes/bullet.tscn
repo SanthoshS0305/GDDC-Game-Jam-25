@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqnij7u2fxf1r"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_grtec"]
-[ext_resource type="Texture2D" uid="uid://oktovjm5bbdc" path="res://pngimg.com - bullets_PNG1468.png" id="2_k6gi3"]
+[ext_resource type="Texture2D" uid="uid://bplxnvt1ibc6" path="res://Artwork/bullet.png" id="2_va1o5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ayhha"]
 size = Vector2(42, 14)
@@ -16,10 +16,10 @@ collision_mask = 0
 script = ExtResource("1_grtec")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(4, 2)
+position = Vector2(2.095, 2)
 rotation = 3.14159
-scale = Vector2(0.0576805, 0.0432605)
-texture = ExtResource("2_k6gi3")
+scale = Vector2(1.275, 1.275)
+texture = ExtResource("2_va1o5")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(4, 2)
