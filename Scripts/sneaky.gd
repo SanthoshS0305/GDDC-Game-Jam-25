@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 120.0
 const JUMP_VELOCITY = -400.0
-var playerPos = Vector2.ZERO
+var player = Vector2.ZERO
 var inRange = false
-var projSpeed = 500
+var projSpeed = 300
 var projScale = 0.8
-var reloadTime = 1
+var reloadTime = 3
 var timeSinceLastShot = 0
 @export var spawner: Node2D
 @onready var projectile = preload("res://Scenes/projectile.tscn")
@@ -17,12 +17,14 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
-	direction.x = playerPos.x - self.position.x
-	direction.y = playerPos.y - self.position.y
-	if(!inRange):
+	velocity = Vector2.ZERO
+	if (player != null):
+		direction.x = player.position.x - self.position.x
+		direction.y = player.position.y - self.position.y
+	if (!inRange):
 		velocity = direction.normalized() * SPEED
 	else:
-		if(timeSinceLastShot >= reloadTime):
+		if (timeSinceLastShot >= reloadTime):
 			attack()
 			timeSinceLastShot = 0
 	timeSinceLastShot += delta
@@ -32,19 +34,23 @@ func _physics_process(delta: float) -> void:
 
 func attack():
 	var bullet = projectile.instantiate()
-	bullet.transform.scale.x = bullet.transform.scale.x * projScale
-	bullet.transform.scale.y = bullet.transform.scale.y * projScale
-	bullet.get_script().SPEED = projSpeed
-	bullet.position = spawner.position
-	add_child(bullet)
+	bullet.setScale(projScale)
+	bullet.setSpeed(projSpeed)
+	bullet.position = self.global_position + spawner.position
+	bullet.setTarget(player.position)
+	get_tree().root.add_child(bullet)
+	await get_tree().create_timer(1).timeout
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if(body.name == "Player"):
+	if (body.name == "Player"):
 		inRange = true;
 		self.visible = true;
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if(body.name == "Player"):
+	if (body.name == "Player"):
 		inRange = false;
 		self.visible = false;
+
+func setPlayer(body: Node2D) -> void:
+	player = body

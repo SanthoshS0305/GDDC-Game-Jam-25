@@ -26,7 +26,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 
-	if Input.is_action_pressed("mouse_left"): # Ensure "mouse_left" is mapped in InputMap
+	if Input.is_action_pressed("mouse_left"):  # Ensure "mouse_left" is mapped in InputMap
 		if can_shoot == true:
 			shoot()
 			can_shoot = false
@@ -38,7 +38,7 @@ func _on_timer_timeout():
 
 func shoot():
 	var bullet = bullet_path.instantiate()
-	bullet.position = $Node2D2.global_position
+	bullet.position = self.global_position
 	bullet.rotation = get_angle_to(get_global_mouse_position())
 	bullet.direction = (get_global_mouse_position() - global_position).normalized()
 	get_parent().add_child(bullet)

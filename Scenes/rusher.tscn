@@ -10,6 +10,8 @@ size = Vector2(128, 131)
 size = Vector2(140, 143)
 
 [node name="Rusher" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 4
 script = ExtResource("1_o3aus")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
