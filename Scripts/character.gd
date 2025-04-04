@@ -3,6 +3,9 @@ extends CharacterBody2D
 var speed: float = 200.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var can_shoot = true
+var killedEnemies = 0
+signal victory
+signal died
 
 func _physics_process(delta):
 	var direction = Vector2.ZERO
@@ -26,7 +29,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 
-	if Input.is_action_pressed("mouse_left"):  # Ensure "mouse_left" is mapped in InputMap
+	if Input.is_action_pressed("mouse_left"): # Ensure "mouse_left" is mapped in InputMap
 		if can_shoot == true:
 			shoot()
 			can_shoot = false
@@ -41,4 +44,9 @@ func shoot():
 	bullet.position = self.global_position
 	bullet.rotation = get_angle_to(get_global_mouse_position())
 	bullet.direction = (get_global_mouse_position() - global_position).normalized()
+	bullet.killedEnemy.connect(killEnemy)
 	get_parent().add_child(bullet)
+
+func killEnemy():
+	print("Killer killer")
+	killedEnemies += 1
