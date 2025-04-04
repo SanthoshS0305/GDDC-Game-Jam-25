@@ -14,12 +14,9 @@ func _process(delta: float) -> void:
 
 
 func _on_first_phase_timeout() -> void:
-	player.can_shoot = true
-	player.inDialogue = false
-	boss.canFight = true
-	# print("done")
-	# player.inDialogue = true
-	# boss.canFight = false
+	print("done")
+	player.inDialogue = true
+	boss.canFight = false
 
 func secondPhaseStart():
 	player.can_shoot = true
