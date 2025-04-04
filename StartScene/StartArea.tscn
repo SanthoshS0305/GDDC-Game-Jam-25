@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu7csg1dbeyle"]
+[gd_scene load_steps=4 format=3 uid="uid://cu7csg1dbeyle"]
 
 [ext_resource type="PackedScene" uid="uid://8ruvomdy82vb" path="res://StartScene/DialogueSystem.tscn" id="1_kbb36"]
+[ext_resource type="PackedScene" uid="uid://cgfmkydavwxr4" path="res://StartScene/4WayPlayer.tscn" id="3_du64k"]
 [ext_resource type="PackedScene" uid="uid://dayw1haifw2xo" path="res://StartScene/Interactable shit/gun.tscn" id="3_t0gc7"]
 
 [node name="StartArea" type="Node2D"]
@@ -11,3 +12,5 @@
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_t0gc7")]
 position = Vector2(-366, 4)
+
+[node name="4WayPlayer2" parent="." instance=ExtResource("3_du64k")]
