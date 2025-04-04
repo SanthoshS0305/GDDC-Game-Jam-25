@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=3 uid="uid://bddraxivbkwkb"]
+
+[ext_resource type="Script" path="res://Scripts/boss.gd" id="1_amsgj"]
+[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="1_tgptj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqjgr"]
+size = Vector2(132, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqa8l"]
+size = Vector2(134.585, 109.94)
+
+[sub_resource type="Animation" id="Animation_wflom"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5708]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ag76x"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.5708, 3.14159, 4.36332]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Weapon:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yfcr"]
+_data = {
+"RESET": SubResource("Animation_wflom"),
+"attack": SubResource("Animation_ag76x")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0srl"]
+size = Vector2(189, 333)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ct1h"]
+radius = 368.11
+
+[node name="Boss" type="CharacterBody2D" node_paths=PackedStringArray("spawner", "animation")]
+collision_layer = 2
+script = ExtResource("1_amsgj")
+spawner = NodePath("Node2D")
+animation = NodePath("AnimationPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tgptj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hqjgr")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(52, -3)
+rotation = 1.5708
+scale = Vector2(1.17188, -0.265152)
+texture = ExtResource("1_tgptj")
+offset = Vector2(-64, 7.54286)
+
+[node name="Area2D" type="Area2D" parent="Weapon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D"]
+position = Vector2(-67.064, 4.66959)
+shape = SubResource("RectangleShape2D_yqa8l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5yfcr")
+}
+
+[node name="meleeRange" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="meleeRange"]
+position = Vector2(126, -5)
+shape = SubResource("RectangleShape2D_b0srl")
+
+[node name="rangedRange" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="rangedRange"]
+shape = SubResource("CircleShape2D_2ct1h")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-91, 0)
+
+[connection signal="body_entered" from="meleeRange" to="." method="_on_melee_range_body_entered"]
+[connection signal="body_exited" from="meleeRange" to="." method="_on_melee_range_body_exited"]
+[connection signal="body_entered" from="rangedRange" to="." method="_on_ranged_range_body_entered"]
+[connection signal="body_exited" from="rangedRange" to="." method="_on_ranged_range_body_exited"]

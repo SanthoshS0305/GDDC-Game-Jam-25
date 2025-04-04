@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://i1twp6nte1ga"]
+
+[ext_resource type="Script" path="res://Scripts/manager.gd" id="1_rxub5"]
+[ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_1kip8"]
+
+[node name="Anger" type="Node2D" node_paths=PackedStringArray("player")]
+script = ExtResource("1_rxub5")
+player = NodePath("Player")
+enemyType = "rusher"
+curLevel = 2
+nextLevel = "res://Scenes/Levels/Depression.tscn"
+
+[node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_1kip8")]
+position = Vector2(602, 352)
+level = NodePath("..")

@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmixrrgsxeqy5"]
+
+[ext_resource type="Script" path="res://Scripts/rusher.gd" id="1_o3aus"]
+[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="1_uh2gc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7cxy"]
+size = Vector2(128, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdgt7"]
+size = Vector2(140, 143)
+
+[node name="Rusher" type="CharacterBody2D"]
+scale = Vector2(0.8, 0.8)
+collision_layer = 2
+script = ExtResource("1_o3aus")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uh2gc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1.5)
+shape = SubResource("RectangleShape2D_x7cxy")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_qdgt7")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
