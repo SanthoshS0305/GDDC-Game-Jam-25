@@ -28,15 +28,15 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Weapon:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.166667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [false, true, false]
 }
 
 [sub_resource type="Animation" id="Animation_nh8lh"]
@@ -74,7 +74,7 @@ _data = {
 
 [node name="Robber" type="CharacterBody2D" node_paths=PackedStringArray("animation")]
 scale = Vector2(0.8, 0.8)
-collision_layer = 4
+collision_layer = 2
 script = ExtResource("1_r1yfp")
 animation = NodePath("AnimationPlayer")
 
@@ -82,6 +82,7 @@ animation = NodePath("AnimationPlayer")
 texture = ExtResource("2_1y33n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(3, 1.5)
 shape = SubResource("RectangleShape2D_8wyty")
 
@@ -92,7 +93,7 @@ shape = SubResource("CircleShape2D_viqqa")
 
 [node name="Weapon" type="Sprite2D" parent="."]
 position = Vector2(52, -3)
-scale = Vector2(-1.17188, 0.265152)
+scale = Vector2(1.17188, -0.265152)
 texture = ExtResource("2_1y33n")
 offset = Vector2(-64, 7.54286)
 

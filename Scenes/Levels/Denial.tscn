@@ -6,7 +6,7 @@
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_oi44p")
 player = NodePath("Player")
-enemyType = "Robber"
+enemyType = "robber"
 curLevel = 1
 nextLevel = "res://Scenes/Levels/Depression.tscn"
 

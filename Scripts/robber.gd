@@ -9,6 +9,9 @@ var restTime = 0.2
 var timeSinceLastAttack = 0
 @export var animation: AnimationPlayer
 
+func _ready() -> void:
+	get_node("Weapon").visible = false
+
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 	velocity = Vector2.ZERO
