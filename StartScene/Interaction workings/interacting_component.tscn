@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1mkgi2j2b0ne"]
+
+[ext_resource type="Script" path="res://StartScene/Interaction workings/interacting_component.gd" id="1_8sn01"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnile"]
+size = Vector2(54, 52)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ah18y"]
+
+[node name="InteractingComponent" type="Node2D"]
+scale = Vector2(2.02821, 1.93117)
+script = ExtResource("1_8sn01")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bnile")
+
+[node name="Interact Label" type="Label" parent="."]
+visible = false
+z_index = 10
+offset_left = -47.0
+offset_top = -74.0
+offset_right = 47.0
+offset_bottom = -51.0
+text = "E to interact"
+label_settings = SubResource("LabelSettings_ah18y")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
