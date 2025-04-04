@@ -18,8 +18,6 @@ var active = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	enemy = load("res://Scenes/" + enemyType + ".tscn")
-	spawn()
-	pass # Replace with function body.
 
 
 func _physics_process(delta):
