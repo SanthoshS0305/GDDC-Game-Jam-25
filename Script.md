@@ -99,9 +99,9 @@
 
 *Exclamation mark over the cabinet. Player goes and interacts with the cabinet. Hovering prompt (I'm going to assume keybind is `F`). The watch, mask, and hat are already there.*
 
-**Mirabelle**: It's the scarf that Colin gave me for my birthday. He knows I get cold in the winters. He was so thoughtful... yet he still left.
+**Mirabelle**: Oh, god. Are these... Are these Colin's glasses? God, what happened to him? Colin, my love, what happened? Where have you gone? Why have you been away so long? What happened to you?
 
-Narration: *Memento Found: Mirabelle's Warm Scarf.*
+**Narration**: *Memento Found: Colin's Broken Glasses.*
 
 **Mirabelle**: Here's the gun. Now what's that noise about?
 
@@ -125,11 +125,11 @@ Narration: *Memento Found: Mirabelle's Warm Scarf.*
 
 **Mirabelle**: What's that noise? *Sigh* I suppose there's someone downstairs? Surely not Colin. I should check it out, but I need to be prepared.
 
-*Exclamation mark over the cabinet. Player goes and interacts with the cabinet. Hovering prompt (I'm going to assume keybind is `F`). The watch, mask, hat, and scarf are already there.*
+*Exclamation mark over the cabinet. Player goes and interacts with the cabinet. Hovering prompt (I'm going to assume keybind is `F`). The watch, mask, hat, and glasses are already there.*
 
-**Mirabelle**: Are those... Are those Colin's glasses? God, what happened to him? Colin, my love, what happened? Where have you gone? Why have you been away so long? What happened to you?
+**Mirabelle**: It's the scarf that Colin gave me for my birthday. He knows I get cold in the winters. He was so thoughtful... yet he was still taken away from me.
 
-Narration: *Memento Found: Colin's Broken Glasses.*
+**Narration**: *Memento Found: Mirabelle's Warm Scarf.*
 
 **Mirabelle**: I guess I don't have a choice but to look.
 
@@ -145,13 +145,25 @@ Narration: *Memento Found: Colin's Broken Glasses.*
 
 **Mirabelle**: But how? How do I go on without you? Look at me! I'm a mess! I can barely get out of bed every day.
 
-**Colin**: You'll find a way. You have to. This is your new normal. I'm sorry I left you.
+**Colin**: You'll find a way. You have to. This is your new normal. You have to learn to live with it.
 
 **Mirabelle**: No - I can't. Not without you.
 
-**Colin**: If you can't let me go, then I have to force your hand. I have to kill you myself.
+**Colin**: I'm sorry I left you, but if you can't let me go, then I have to force your hand. I'm going to make you kill me.
 
 **Mira**: What?
+
+*Play Acceptance Dodge Loop*
+
+**Mira**: Colin! Stop! What are you doing?!
+
+**Colin**: Just do it! Just kill me Mira! It's the only way either of us can find peace!
+
+**Mira**: I can't! You know I can't!
+
+**Colin**: You have to! There's no other way.
+
+**Mira**: ... ... Fine.
 
 *Play Acceptance gameplay loop. After killing Colin.*
 
