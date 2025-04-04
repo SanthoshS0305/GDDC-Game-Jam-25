@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drtspq348dc72"
-path="res://.godot/imported/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp-b176ee32db4e5e0ec040003680180043.ctex"
+path="res://.godot/imported/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp-da4c229865e249ba9ada1f4c7f209229.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp"
-dest_files=["res://.godot/imported/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp-b176ee32db4e5e0ec040003680180043.ctex"]
+source_file="res://StartScene/Interactable shit/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp"
+dest_files=["res://.godot/imported/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp-da4c229865e249ba9ada1f4c7f209229.ctex"]
 
 [params]
 
