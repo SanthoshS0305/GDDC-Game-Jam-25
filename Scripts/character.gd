@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @export var level: Node2D
+@export var waveCounter: RichTextLabel
 var speed: float = 200.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var can_shoot = true
 var killedEnemies = 0
 #Number of enemies to kil to pass the level
-var victoryCondition = 35
+var victoryCondition = 80
 #Signals to indicate game state
 signal victory
 signal died
@@ -65,5 +66,5 @@ func death():
 	print("bleh")
 	died.emit()
 
-func changeWaveCounter():
-	pass
+func changeWaveCounter(wave: int):
+	waveCounter.text = "Wave: " + str(wave)
