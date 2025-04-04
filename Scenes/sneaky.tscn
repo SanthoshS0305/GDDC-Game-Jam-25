@@ -11,7 +11,6 @@ radius = 425.327
 
 [node name="Sneaky" type="CharacterBody2D" node_paths=PackedStringArray("spawner")]
 scale = Vector2(0.8, 0.8)
-collision_mask = 2
 script = ExtResource("1_cwrrg")
 spawner = NodePath("ProjectileSpawn")
 
