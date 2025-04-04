@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed: float = 200.0
-var bullet_path = preload("res://bullet.tscn")
+var bullet_path = preload("res://Scenes/bullet.tscn")
 var can_shoot = true
 
 func _physics_process(delta):
@@ -26,7 +26,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 
-	if Input.is_action_pressed("mouse_left"):  # Ensure "mouse_left" is mapped in InputMap
+	if Input.is_action_pressed("mouse_left"): # Ensure "mouse_left" is mapped in InputMap
 		if can_shoot == true:
 			shoot()
 			can_shoot = false

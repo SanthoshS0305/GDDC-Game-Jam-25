@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://doomfsln1u1oi"]
+
+[ext_resource type="Script" path="res://robber.gd" id="1_qukri"]
+[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="1_rb33b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wyty"]
+size = Vector2(128, 131)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_viqqa"]
+radius = 195.533
+
+[node name="Robber" type="CharacterBody2D"]
+position = Vector2(643, 393)
+script = ExtResource("1_qukri")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rb33b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 1.5)
+shape = SubResource("RectangleShape2D_8wyty")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_viqqa")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

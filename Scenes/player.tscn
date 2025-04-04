@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://crf84xve5a3bn"]
+
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_qr7c6"]
+[ext_resource type="Texture2D" uid="uid://cthi5n1uxnbnp" path="res://Artwork/mc_top.png" id="2_1ny7p"]
+[ext_resource type="Script" path="res://Scripts/WaveCounter.gd" id="3_i4ukd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xing4"]
+size = Vector2(111.172, 88.6383)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("waveCounter")]
+collision_mask = 2
+script = ExtResource("1_qr7c6")
+waveCounter = NodePath("RichTextLabel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 2)
+texture = ExtResource("2_1ny7p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1.81662)
+scale = Vector2(1.07941, 0.996937)
+shape = SubResource("RectangleShape2D_xing4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -100.0
+offset_top = -293.0
+offset_right = 97.0
+offset_bottom = -254.0
+pivot_offset = Vector2(99, 294)
+text = "Wave: "
+script = ExtResource("3_i4ukd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)

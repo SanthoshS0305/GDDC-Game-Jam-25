@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="5 stages of beef"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://Scenes/robber.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
