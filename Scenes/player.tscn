@@ -1,23 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://crf84xve5a3bn"]
 
-[ext_resource type="Script" path="res://Scripts/character.gd" id="1_qr7c6"]
+[ext_resource type="Script" uid="uid://owswflgiv0yb" path="res://Scripts/character.gd" id="1_qr7c6"]
 [ext_resource type="Texture2D" uid="uid://cthi5n1uxnbnp" path="res://Artwork/mc_top.png" id="2_1ny7p"]
-[ext_resource type="Script" path="res://Scripts/WaveCounter.gd" id="3_i4ukd"]
+[ext_resource type="Script" uid="uid://di4u6rfh61giq" path="res://Scripts/WaveCounter.gd" id="3_i4ukd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xing4"]
-size = Vector2(111.172, 88.6383)
+size = Vector2(84.3053, 122.375)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("waveCounter")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("waveCounter", "firingPoint")]
 collision_mask = 2
 script = ExtResource("1_qr7c6")
 waveCounter = NodePath("RichTextLabel")
+firingPoint = NodePath("Node2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 2)
+position = Vector2(6, 1)
+rotation = 1.5708
 texture = ExtResource("2_1ny7p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1.81662)
+position = Vector2(7.50001, 8.34465e-07)
 scale = Vector2(1.07941, 0.996937)
 shape = SubResource("RectangleShape2D_xing4")
 
@@ -32,3 +34,6 @@ script = ExtResource("3_i4ukd")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1, 0)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(39, 47)

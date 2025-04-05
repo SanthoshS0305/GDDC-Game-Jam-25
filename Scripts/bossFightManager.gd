@@ -2,10 +2,13 @@ extends Node2D
 
 @export var player: Node2D
 @export var boss: Node2D
+@export var curLevel: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.can_shoot = false
+	player.inDialogue = false
 	boss.player = player
+	Global.currentStage = curLevel
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,6 +17,7 @@ func _process(delta: float) -> void:
 
 
 func _on_first_phase_timeout() -> void:
+	print("done")
 	player.inDialogue = true
 	boss.canFight = false
 

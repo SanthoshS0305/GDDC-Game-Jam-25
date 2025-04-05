@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://8ruvomdy82vb"]
 
-[ext_resource type="Script" path="res://StartScene/text_boxes.gd" id="1_8p5eo"]
+[ext_resource type="Script" uid="uid://c00e47876q22v" path="res://StartScene/text_boxes.gd" id="1_8p5eo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ln1g0"]
 font_size = 15
@@ -19,6 +19,7 @@ text = "Speaker"
 
 [node name="DialogueLabel" type="Label" parent="."]
 z_index = 12
+custom_minimum_size = Vector2(100, 50)
 offset_left = 34.0
 offset_top = 374.0
 offset_right = 534.0

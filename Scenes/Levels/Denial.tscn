@@ -1,15 +1,22 @@
 [gd_scene load_steps=3 format=3 uid="uid://bwyny3rn2n08f"]
 
-[ext_resource type="Script" path="res://Scripts/manager.gd" id="1_oi44p"]
+[ext_resource type="Script" uid="uid://c6utlk3glxo1" path="res://Scripts/manager.gd" id="1_oi44p"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_qqhbm"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_oi44p")
 player = NodePath("Player")
 enemyType = "robber"
-curLevel = 1
 nextLevel = "res://Scenes/Levels/Depression.tscn"
+startDialogue = Array[Dictionary]([{
+"speaker": "MC",
+"text": "Testing 123"
+}])
+endDialogue = Array[Dictionary]([{
+"speaker": "cool",
+"text": "station"
+}])
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_qqhbm")]
-position = Vector2(588, 361)
+position = Vector2(613.602, 110.543)
 level = NodePath("..")

@@ -19,7 +19,7 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if (body.name != "boss"):
+	if (body.name != "Boss"):
 		killedEnemy.emit()
 		body.queue_free()
 		queue_free()
