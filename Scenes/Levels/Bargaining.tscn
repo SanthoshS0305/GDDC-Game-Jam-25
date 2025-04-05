@@ -7,7 +7,7 @@
 script = ExtResource("1_xhveg")
 player = NodePath("Player")
 enemyType = "gunner"
-curLevel = 4
+curLevel = 3
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_jlrqm")]
 position = Vector2(602, 352)

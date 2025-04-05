@@ -17,20 +17,25 @@ script = ExtResource("1_cwrrg")
 spawner = NodePath("ProjectileSpawn")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 scale = Vector2(1.065, 1.065)
 texture = ExtResource("2_yshw8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
 scale = Vector2(1, 0.69)
 shape = SubResource("RectangleShape2D_jg6gg")
 
 [node name="Area2D" type="Area2D" parent="."]
+rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
 shape = SubResource("CircleShape2D_inug8")
 
 [node name="ProjectileSpawn" type="Node2D" parent="."]
 position = Vector2(-46.25, -27.5)
+rotation = 1.5708
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

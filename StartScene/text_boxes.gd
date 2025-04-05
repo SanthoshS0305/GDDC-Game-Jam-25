@@ -2,6 +2,7 @@ extends Node
 
 @onready var speaker_label = $SpeakerLabel
 @onready var dialogue_label = $DialogueLabel
+signal dialogueComplete
 
 var dialogue: Array = []
 var current_index: int = 0
@@ -28,6 +29,7 @@ func show_dialogue():
 		$ColorRect.hide()
 		$DialogueLabel.hide()
 		$SpeakerLabel.hide()
+		dialogueComplete.emit()
 
 func _input(event):
 	if event.is_pressed() and not event.is_echo():

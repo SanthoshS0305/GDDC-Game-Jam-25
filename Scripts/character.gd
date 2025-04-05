@@ -2,14 +2,15 @@ extends CharacterBody2D
 
 @export var level: Node2D
 @export var waveCounter: RichTextLabel
+@export var firingPoint: Node2D
 var speed: float = 320.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var killedEnemies = 0
-#For boss fight
+#For controlling player's avaliabe actions during the level
 var can_shoot = true
-var inDialogue = false
+var inDialogue = true
 #Number of enemies to kil to pass the level
-var victoryCondition = 80
+var victoryCondition = 1
 #Signals to indicate game state
 signal victory
 signal died
@@ -53,7 +54,7 @@ func _on_timer_timeout():
 
 func shoot():
 	var bullet = bullet_path.instantiate()
-	bullet.position = self.global_position
+	bullet.position = firingPoint.global_position
 	bullet.rotation = get_angle_to(get_global_mouse_position())
 	bullet.direction = (get_global_mouse_position() - global_position).normalized()
 	bullet.killedEnemy.connect(killEnemy)

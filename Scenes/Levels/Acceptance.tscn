@@ -8,6 +8,7 @@
 script = ExtResource("1_vuna4")
 player = NodePath("Player")
 boss = NodePath("Boss")
+curLevel = 4
 
 [node name="Boss" parent="." instance=ExtResource("2_afrm6")]
 position = Vector2(869, 334)

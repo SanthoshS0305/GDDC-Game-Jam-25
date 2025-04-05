@@ -19,6 +19,7 @@ text = "Speaker"
 
 [node name="DialogueLabel" type="Label" parent="."]
 z_index = 12
+custom_minimum_size = Vector2(100, 50)
 offset_left = 34.0
 offset_top = 374.0
 offset_right = 534.0
