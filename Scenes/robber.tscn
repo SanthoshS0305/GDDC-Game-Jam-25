@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://doomfsln1u1oi"]
 
-[ext_resource type="Script" path="res://Scripts/robber.gd" id="1_r1yfp"]
+[ext_resource type="Script" uid="uid://b4ti2bjnpfwwf" path="res://Scripts/robber.gd" id="1_r1yfp"]
 [ext_resource type="Texture2D" uid="uid://bj1npu7sdlug4" path="res://Artwork/denial_npc.png" id="2_tq4im"]
 [ext_resource type="Texture2D" uid="uid://c4w5ljlthcps4" path="res://Artwork/denial_npc_weapon.png" id="3_gn3k1"]
 
@@ -69,8 +69,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_425kf"]
 _data = {
-"Attack": SubResource("Animation_wu6lt"),
-"RESET": SubResource("Animation_nh8lh")
+&"Attack": SubResource("Animation_wu6lt"),
+&"RESET": SubResource("Animation_nh8lh")
 }
 
 [node name="Robber" type="CharacterBody2D" node_paths=PackedStringArray("animation")]

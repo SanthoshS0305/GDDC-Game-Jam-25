@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c8iv2xgtwqmu7"]
 
-[ext_resource type="Script" path="res://Scripts/sneaky.gd" id="1_cwrrg"]
+[ext_resource type="Script" uid="uid://caqryncb146pk" path="res://Scripts/sneaky.gd" id="1_cwrrg"]
 [ext_resource type="Texture2D" uid="uid://cml5p4wx5js4a" path="res://Artwork/bargaining_npc.png" id="2_yshw8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jg6gg"]

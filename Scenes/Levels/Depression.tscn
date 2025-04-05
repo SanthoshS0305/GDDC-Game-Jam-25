@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bobityylpyrfc"]
 
-[ext_resource type="Script" path="res://Scripts/manager.gd" id="1_75xwc"]
+[ext_resource type="Script" uid="uid://c6utlk3glxo1" path="res://Scripts/manager.gd" id="1_75xwc"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_dd4vs"]
 
 [node name="Depression" type="Node2D" node_paths=PackedStringArray("player")]

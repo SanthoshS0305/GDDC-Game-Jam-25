@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmixrrgsxeqy5"]
 
-[ext_resource type="Script" path="res://Scripts/rusher.gd" id="1_o3aus"]
+[ext_resource type="Script" uid="uid://c6i2suo2nrbr" path="res://Scripts/rusher.gd" id="1_o3aus"]
 [ext_resource type="Texture2D" uid="uid://knwkt37vx4ck" path="res://Artwork/anger_npc.png" id="2_mrlf2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7cxy"]
