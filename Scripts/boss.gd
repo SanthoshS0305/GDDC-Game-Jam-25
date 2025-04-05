@@ -10,8 +10,8 @@ var projSpeed = 450
 var projScale = 1
 var reloadTime = 1
 var timeSinceLastShot = 0
-var canFight = true
-var invulnerable = 2
+var canFight = false
+var invulnerable = 10
 var timeSinceLastHit = 2
 ##Distance for teleporting
 var maxDistanceX = 100

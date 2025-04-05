@@ -6,9 +6,9 @@
 [node name="Depression" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_75xwc")
 player = NodePath("Player")
-enemyType = "gunner"
-curLevel = 2
-nextLevel = "res://Scenes/Levels/Bargaining.tscn"
+enemyType = "sneaky"
+curLevel = 3
+nextLevel = "res://Scenes/Levels/Acceptance.tscn"
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_dd4vs")]
 position = Vector2(602, 352)

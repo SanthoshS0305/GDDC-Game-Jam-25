@@ -8,7 +8,9 @@ var dialogue: Array = []
 var current_index: int = 0
 
 func _ready():
-	show_dialogue()
+	$ColorRect.show()
+	$DialogueLabel.show()
+	$SpeakerLabel.show()
 
 func start_dialogue(input_dialogue: Array):
 	dialogue = input_dialogue
@@ -30,8 +32,10 @@ func show_dialogue():
 		$DialogueLabel.hide()
 		$SpeakerLabel.hide()
 		dialogueComplete.emit()
+		queue_free()
+		
 
 func _input(event):
-	if event.is_pressed() and not event.is_echo():
+	if Input.is_action_just_pressed("mouse_left") and not event.is_echo():
 		current_index += 1
 		show_dialogue()

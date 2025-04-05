@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://crf84xve5a3bn"]
+[gd_scene load_steps=6 format=3 uid="uid://crf84xve5a3bn"]
 
 [ext_resource type="Script" uid="uid://owswflgiv0yb" path="res://Scripts/character.gd" id="1_qr7c6"]
 [ext_resource type="Texture2D" uid="uid://cthi5n1uxnbnp" path="res://Artwork/mc_top.png" id="2_1ny7p"]
 [ext_resource type="Script" uid="uid://di4u6rfh61giq" path="res://Scripts/WaveCounter.gd" id="3_i4ukd"]
+[ext_resource type="FontFile" uid="uid://2b052kph5gdr" path="res://TextFonts/LowresPixel-Regular.otf" id="3_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xing4"]
 size = Vector2(84.3053, 122.375)
@@ -29,7 +30,10 @@ offset_top = -293.0
 offset_right = 97.0
 offset_bottom = -254.0
 pivot_offset = Vector2(99, 294)
-text = "Wave: "
+theme_override_fonts/normal_font = ExtResource("3_vgqql")
+theme_override_font_sizes/normal_font_size = 36
+text = "Wave:  1"
+horizontal_alignment = 1
 script = ExtResource("3_i4ukd")
 
 [node name="Camera2D" type="Camera2D" parent="."]

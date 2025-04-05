@@ -10,7 +10,7 @@ var killedEnemies = 0
 var can_shoot = true
 var inDialogue = true
 #Number of enemies to kil to pass the level
-var victoryCondition = 1
+var victoryCondition = 10
 #Signals to indicate game state
 signal victory
 signal died
@@ -71,4 +71,5 @@ func death():
 	died.emit()
 
 func changeWaveCounter(wave: int):
+	print("Updating")
 	waveCounter.text = "Wave: " + str(wave)

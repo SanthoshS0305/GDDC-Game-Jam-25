@@ -8,7 +8,7 @@ script = ExtResource("1_rxub5")
 player = NodePath("Player")
 enemyType = "rusher"
 curLevel = 1
-nextLevel = "res://Scenes/Levels/Depression.tscn"
+nextLevel = "res://Scenes/Levels/Bargaining.tscn"
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_1kip8")]
 position = Vector2(602, 352)

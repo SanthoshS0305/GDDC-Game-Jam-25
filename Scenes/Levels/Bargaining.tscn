@@ -7,7 +7,8 @@
 script = ExtResource("1_xhveg")
 player = NodePath("Player")
 enemyType = "gunner"
-curLevel = 3
+curLevel = 2
+nextLevel = "res://Scenes/Levels/Depression.tscn"
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_jlrqm")]
 position = Vector2(602, 352)

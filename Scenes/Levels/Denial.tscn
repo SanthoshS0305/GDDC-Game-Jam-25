@@ -7,7 +7,7 @@
 script = ExtResource("1_oi44p")
 player = NodePath("Player")
 enemyType = "robber"
-nextLevel = "res://Scenes/Levels/Depression.tscn"
+nextLevel = "res://Scenes/Levels/Anger.tscn"
 startDialogue = Array[Dictionary]([{
 "speaker": "MC",
 "text": "Testing 123"

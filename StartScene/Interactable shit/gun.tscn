@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dayw1haifw2xo"]
 
 [ext_resource type="Script" uid="uid://c1dyl5xqysyaj" path="res://StartScene/Interactable shit/gun.gd" id="1_4echf"]
-[ext_resource type="Texture2D" uid="uid://drtspq348dc72" path="res://StartScene/Interactable shit/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp" id="1_krlva"]
+[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="2_xpuuu"]
 [ext_resource type="PackedScene" uid="uid://c35pf2ab3p2v2" path="res://StartScene/Interaction workings/Interactable.tscn" id="3_8jmmf"]
 [ext_resource type="PackedScene" uid="uid://8ruvomdy82vb" path="res://StartScene/DialogueSystem.tscn" id="4_dnnc4"]
 
@@ -18,7 +18,7 @@ script = ExtResource("1_4echf")
 shape = SubResource("RectangleShape2D_dc5p0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_krlva")
+texture = ExtResource("2_xpuuu")
 
 [node name="Interactable" parent="." instance=ExtResource("3_8jmmf")]
 collision_mask = 512

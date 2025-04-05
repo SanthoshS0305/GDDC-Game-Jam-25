@@ -41,13 +41,14 @@ func _ready() -> void:
 func _physics_process(delta):
 	lastSpawn += delta
 	if (lastSpawn >= timeBetweenSpawns && active):
-		lastSpawn -= timeBetweenSpawns
+		lastSpawn = 0
 		spawn()
 		print("Wave: " + str(curWave))
 		if ((curWave - 1) * 5 + 10 <= enemiesSpawned):
 			curWave += 1
 			enemiesSpawned = 0
 			timeBetweenSpawns -= 0.5
+			print("New Wave")
 			newWave.emit(curWave)
 	
 func spawn():
@@ -66,6 +67,7 @@ func spawn():
 	enemiesSpawned += 1
 
 func victory():
+	active = false
 	var dialogue_instance = DialogueSys.instantiate()
 	add_child(dialogue_instance)
 	dialogue_instance.start_dialogue(endDialogue)
