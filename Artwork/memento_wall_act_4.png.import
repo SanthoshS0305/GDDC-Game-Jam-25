@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drtspq348dc72"
-path="res://.godot/imported/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp-b176ee32db4e5e0ec040003680180043.ctex"
+uid="uid://24gah1yjfsm5"
+path="res://.godot/imported/memento_wall_act_4.png-796beca259b86391b5447e4bfda0e291.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp"
-dest_files=["res://.godot/imported/ai-generated-pistol-gun-isolated-on-transparent-background-ai-png.webp-b176ee32db4e5e0ec040003680180043.ctex"]
+source_file="res://Artwork/memento_wall_act_4.png"
+dest_files=["res://.godot/imported/memento_wall_act_4.png-796beca259b86391b5447e4bfda0e291.ctex"]
 
 [params]
 

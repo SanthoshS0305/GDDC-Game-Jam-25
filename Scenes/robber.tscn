@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://doomfsln1u1oi"]
+[gd_scene load_steps=10 format=3 uid="uid://doomfsln1u1oi"]
 
 [ext_resource type="Script" path="res://Scripts/robber.gd" id="1_r1yfp"]
-[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="2_1y33n"]
+[ext_resource type="Texture2D" uid="uid://bj1npu7sdlug4" path="res://Artwork/denial_npc.png" id="2_tq4im"]
+[ext_resource type="Texture2D" uid="uid://c4w5ljlthcps4" path="res://Artwork/denial_npc_weapon.png" id="3_gn3k1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wyty"]
 size = Vector2(128, 131)
@@ -21,19 +22,19 @@ tracks/0/path = NodePath("Weapon:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-1.5708, 0.0, 1.0472]
+"values": [3.14159, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/path = NodePath("Weapon:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -79,7 +80,7 @@ script = ExtResource("1_r1yfp")
 animation = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_1y33n")
+texture = ExtResource("2_tq4im")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -93,9 +94,15 @@ shape = SubResource("CircleShape2D_viqqa")
 
 [node name="Weapon" type="Sprite2D" parent="."]
 position = Vector2(52, -3)
-scale = Vector2(1.17188, -0.265152)
-texture = ExtResource("2_1y33n")
-offset = Vector2(-64, 7.54286)
+offset = Vector2(-1.82, 43.21)
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Weapon"]
+position = Vector2(-45.985, 0)
+rotation = -1.5708
+scale = Vector2(1, 1)
+texture = ExtResource("3_gn3k1")
 
 [node name="Area2D" type="Area2D" parent="Weapon"]
 
