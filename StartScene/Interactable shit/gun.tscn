@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dayw1haifw2xo"]
 
 [ext_resource type="Script" uid="uid://c1dyl5xqysyaj" path="res://StartScene/Interactable shit/gun.gd" id="1_4echf"]
-[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="2_xpuuu"]
+[ext_resource type="Texture2D" uid="uid://dx6ajraa3jeya" path="res://Artwork/gun.png" id="2_xpuuu"]
 [ext_resource type="PackedScene" uid="uid://c35pf2ab3p2v2" path="res://StartScene/Interaction workings/Interactable.tscn" id="3_8jmmf"]
 [ext_resource type="PackedScene" uid="uid://8ruvomdy82vb" path="res://StartScene/DialogueSystem.tscn" id="4_dnnc4"]
 
@@ -15,6 +15,7 @@ size = Vector2(310, 224)
 script = ExtResource("1_4echf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_dc5p0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -27,6 +28,7 @@ interact_name = "grab gun"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 light_mask = 3
 visibility_layer = 2
+scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_t3oxb")
 
 [node name="Dialouge" parent="." instance=ExtResource("4_dnnc4")]

@@ -17,8 +17,8 @@ func _ready() -> void:
 	cur_dialogue.dialogueComplete.connect(startLevel)
 	boss.player = player
 	Global.currentStage = curLevel
-	player.victory.connect(victory)
 	player.died.connect(defeat)
+	boss.victory.connect(victory)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
