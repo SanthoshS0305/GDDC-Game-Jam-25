@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://csvcvnagqu4j1"]
+
+[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="1_xahfg"]
+
+[node name="Memento" type="TextureButton"]
+texture_normal = ExtResource("1_xahfg")

@@ -16,7 +16,7 @@ func _ready() -> void:
 	cur_dialogue.start_dialogue(startDialogue)
 	cur_dialogue.dialogueComplete.connect(startLevel)
 	boss.player = player
-	Global.currentStage = curLevel
+	Global._setLevel(curLevel)
 	player.died.connect(defeat)
 	boss.victory.connect(victory)
 
@@ -30,7 +30,7 @@ func _on_first_phase_timeout() -> void:
 	print("done")
 	player.inDialogue = true
 	boss.canFight = false
-	if(cur_dialogue != null):
+	if (cur_dialogue != null):
 		cur_dialogue.queue_free()
 	var cur_dialogue = DialogueSys.instantiate()
 	add_child(cur_dialogue)
@@ -39,7 +39,7 @@ func _on_first_phase_timeout() -> void:
 
 func secondPhaseStart():
 	print("start")
-	if(cur_dialogue != null):
+	if (cur_dialogue != null):
 		cur_dialogue.queue_free()
 	get_node("FirstPhase").set_paused(true)
 	player.can_shoot = true

@@ -31,7 +31,7 @@ func _ready() -> void:
 	enemy = load("res://Scenes/" + enemyType + ".tscn")
 	player.victory.connect(victory)
 	player.died.connect(defeat)
-	Global.currentStage = curLevel
+	Global._setLevel(curLevel)
 	var dialogue_instance = DialogueSys.instantiate()
 	add_child(dialogue_instance)
 	dialogue_instance.start_dialogue(startDialogue)
@@ -75,7 +75,6 @@ func victory():
 
 func defeat():
 	call_deferred("toDefeatScreen")
-	print("Whomp whomp")
 
 func startLevel():
 	active = true
