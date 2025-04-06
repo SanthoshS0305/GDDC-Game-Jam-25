@@ -74,7 +74,7 @@ func victory():
 	dialogue_instance.dialogueComplete.connect(moveToNext)
 
 func defeat():
-	get_tree().change_scene_to_file("res://Scenes/Levels/Defeat.tscn")
+	call_deferred("toDefeatScreen")
 	print("Whomp whomp")
 
 func startLevel():
@@ -84,3 +84,6 @@ func startLevel():
 
 func moveToNext():
 	get_tree().change_scene_to_file(nextLevel)
+
+func toDefeatScreen():
+	get_tree().change_scene_to_file("res://Scenes/Levels/Defeat.tscn")

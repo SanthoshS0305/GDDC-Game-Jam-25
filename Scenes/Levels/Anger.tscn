@@ -9,6 +9,35 @@ player = NodePath("Player")
 enemyType = "rusher"
 curLevel = 1
 nextLevel = "res://Scenes/Levels/Bargaining.tscn"
+startDialogue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "And then she woke up."
+}, {
+"speaker": "Mirabelle",
+"text": "Where's Colin? Where'd he go. Did forget he has a wife he's leaving behind?"
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed."
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? Is there someone in the house? Colin wouldn't try to be quiet. He'd be stomping around like he owns the place. I need my gun. It should be in the cabinet."
+}, {
+"speaker": "Mirabelle",
+"text": "Oooh it's Colin's domino mask! He wore it our first Halloween together! He dressed up as a robber and I was a vampire."
+}, {
+"speaker": "Narrator",
+"text": "Memento Found: Colin's Tattered Domino Mask."
+}, {
+"speaker": "Mirabelle",
+"text": "Here's the gun! I'm going to go check out that noise."
+}, {
+"speaker": "Mirabelle",
+"text": "What? That's a lot of Santas. I fucking hate Santa. Now they'll die."
+}])
+endDialogue = Array[Dictionary]([{
+"speaker": "Mirabelle",
+"text": "That's everyone. Now where did this fucker Colin go?"
+}])
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_1kip8")]
 position = Vector2(602, 352)

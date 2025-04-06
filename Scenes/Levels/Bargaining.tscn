@@ -6,9 +6,38 @@
 [node name="Bargaining" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_xhveg")
 player = NodePath("Player")
-enemyType = "gunner"
+enemyType = "sneaky"
 curLevel = 2
 nextLevel = "res://Scenes/Levels/Depression.tscn"
+startDialogue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "And then she woke up."
+}, {
+"speaker": "Mirabelle",
+"text": "Colin's been gone for so long. I hope he isn't hurt. What if he got lost or something?"
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed."
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? Is there someone in the house? What if it's Colin? It doesn't sound like him, though. I need my gun, just in case. It should be in the cabinet."
+}, {
+"speaker": "Mirabelle",
+"text": "Ugh, it's the Santa hat that Colin last Christmas. He dressed up as Santa to try to scare me. Asshole."
+}, {
+"speaker": "Narrator",
+"text": "Memento Found: Colin's Old Santa Hat."
+}, {
+"speaker": "Mirabelle",
+"text": "Here's the gun! I'm going to go check out that noise."
+}, {
+"speaker": "Mirabelle",
+"text": "What? I swear I saw someone there. Did they just... Go Invisible? Oh shit I think they did!"
+}])
+endDialogue = Array[Dictionary]([{
+"speaker": "Mirabelle",
+"text": "What if Colin's just in traffic? I'm sure he'll be back soon."
+}])
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_jlrqm")]
 position = Vector2(602, 352)
