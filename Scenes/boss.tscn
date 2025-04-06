@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bddraxivbkwkb"]
 
-[ext_resource type="Script" path="res://Scripts/boss.gd" id="1_amsgj"]
+[ext_resource type="Script" uid="uid://rusq7xfg1dxv" path="res://Scripts/boss.gd" id="1_amsgj"]
 [ext_resource type="Texture2D" uid="uid://d2c786uodx1ej" path="res://Artwork/acceptance_boss.png" id="2_w4drp"]
 [ext_resource type="Texture2D" uid="uid://c4w5ljlthcps4" path="res://Artwork/denial_npc_weapon.png" id="3_a10ky"]
 
@@ -66,12 +66,12 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5yfcr"]
 _data = {
-"RESET": SubResource("Animation_wflom"),
-"attack": SubResource("Animation_ag76x")
+&"RESET": SubResource("Animation_wflom"),
+&"attack": SubResource("Animation_ag76x")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0srl"]
-size = Vector2(189, 333)
+size = Vector2(113.5, 185)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ct1h"]
 radius = 368.11
@@ -104,14 +104,14 @@ shape = SubResource("RectangleShape2D_yqa8l")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_5yfcr")
+&"": SubResource("AnimationLibrary_5yfcr")
 }
 
 [node name="meleeRange" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="meleeRange"]
-position = Vector2(126, -5)
+position = Vector2(88.25, -8.5)
 shape = SubResource("RectangleShape2D_b0srl")
 
 [node name="rangedRange" type="Area2D" parent="."]

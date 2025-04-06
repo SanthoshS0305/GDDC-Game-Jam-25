@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oktovjm5bbdc"
-path="res://.godot/imported/pngimg.com - bullets_PNG1468.png-8de807c89a5c99c4dad635d36eac627c.ctex"
+uid="uid://b4kwyjycuk578"
+path="res://.godot/imported/memento_wall_act_6.png-99d2011059ac52d029cd409faa7c19ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pngimg.com - bullets_PNG1468.png"
-dest_files=["res://.godot/imported/pngimg.com - bullets_PNG1468.png-8de807c89a5c99c4dad635d36eac627c.ctex"]
+source_file="res://Artwork/memento_wall_act_6.png"
+dest_files=["res://.godot/imported/memento_wall_act_6.png-99d2011059ac52d029cd409faa7c19ba.ctex"]
 
 [params]
 

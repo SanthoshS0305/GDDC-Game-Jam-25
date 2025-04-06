@@ -1,13 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://dusfbpsk4vl58"]
+[gd_scene load_steps=4 format=3 uid="uid://dusfbpsk4vl58"]
 
-[ext_resource type="Script" path="res://Scripts/manager.gd" id="1_xhveg"]
+[ext_resource type="Script" uid="uid://c6utlk3glxo1" path="res://Scripts/manager.gd" id="1_xhveg"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="2_i413f"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_jlrqm"]
 
 [node name="Bargaining" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_xhveg")
 player = NodePath("Player")
-enemyType = "gunner"
-curLevel = 4
+enemyType = "sneaky"
+curLevel = 2
+nextLevel = "res://Scenes/Levels/Depression.tscn"
+startDialogue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "And then she woke up."
+}, {
+"speaker": "Mirabelle",
+"text": "Colin's been gone for so long. I hope he isn't hurt. What if he got lost or something?"
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed."
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? Is there someone in the house? What if it's Colin? It doesn't sound like him, though. I need my gun, just in case. It should be in the cabinet."
+}, {
+"speaker": "Mirabelle",
+"text": "Ugh, it's the Santa hat that Colin last Christmas. He dressed up as Santa to try to scare me. Asshole."
+}, {
+"speaker": "Narrator",
+"text": "Memento Found: Colin's Old Santa Hat."
+}, {
+"speaker": "Mirabelle",
+"text": "Here's the gun! I'm going to go check out that noise."
+}, {
+"speaker": "Mirabelle",
+"text": "What? I swear I saw someone there. Did they just... Go Invisible? Oh shit I think they did!"
+}])
+endDialogue = Array[Dictionary]([{
+"speaker": "Mirabelle",
+"text": "What if Colin's just in traffic? I'm sure he'll be back soon."
+}])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("2_i413f")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_jlrqm")]
 position = Vector2(602, 352)

@@ -8,6 +8,7 @@ var direction = Vector2.ZERO
 func _ready() -> void:
 	direction.x = playerPos.x - self.position.x
 	direction.y = playerPos.y - self.position.y
+	self.rotation = direction.angle()
 
 func setTarget(position: Vector2):
 	playerPos = position
@@ -23,7 +24,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_timer_timeout() -> void:
-	print("death")
 	queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4kwyjycuk578"
-path="res://.godot/imported/memento_wall_complete.png-effec01b502b608e3c552ea500a9c624.ctex"
+uid="uid://cn1rvggo46ogm"
+path="res://.godot/imported/level_room.png-b13744c25b4cc1992aa6afcbf1dbda18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Artwork/memento_wall_complete.png"
-dest_files=["res://.godot/imported/memento_wall_complete.png-effec01b502b608e3c552ea500a9c624.ctex"]
+source_file="res://Artwork/level_room.png"
+dest_files=["res://.godot/imported/level_room.png-b13744c25b4cc1992aa6afcbf1dbda18.ctex"]
 
 [params]
 
