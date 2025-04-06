@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bis2da0s0wmfw"]
+[gd_scene load_steps=6 format=3 uid="uid://bis2da0s0wmfw"]
 
 [ext_resource type="Script" uid="uid://b883j8celcxa4" path="res://Scripts/main_menu.gd" id="1_8saeu"]
-[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="1_tt5f1"]
 [ext_resource type="FontFile" uid="uid://dub287txr78av" path="res://TextFonts/ka1.ttf" id="2_853f1"]
+[ext_resource type="Texture2D" uid="uid://ba46cjwljam0d" path="res://Artwork/menu_button.png" id="2_df05h"]
+[ext_resource type="Texture2D" uid="uid://ce5b40f6oj3dg" path="res://Artwork/menu_button hover.png" id="3_8um5k"]
+[ext_resource type="FontFile" uid="uid://2b052kph5gdr" path="res://TextFonts/LowresPixel-Regular.otf" id="5_df05h"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,19 +14,45 @@ startScene = "res://Scenes/Levels/Denial.tscn"
 
 [node name="Start" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 252.0
-offset_right = 650.0
-offset_bottom = 380.0
-texture_normal = ExtResource("1_tt5f1")
+offset_left = 398.0
+offset_top = 297.0
+offset_right = 782.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_df05h")
+texture_pressed = ExtResource("3_8um5k")
 
 [node name="Mementos" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 518.0
-offset_top = 416.0
-offset_right = 646.0
-offset_bottom = 544.0
-texture_normal = ExtResource("1_tt5f1")
+offset_left = 399.0
+offset_top = 496.0
+offset_right = 783.0
+offset_bottom = 624.0
+texture_normal = ExtResource("2_df05h")
+texture_pressed = ExtResource("3_8um5k")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 247.0
+offset_right = 801.0
+offset_bottom = 332.0
+scale = Vector2(0.879998, 0.76)
+theme_override_fonts/normal_font = ExtResource("5_df05h")
+theme_override_font_sizes/normal_font_size = 48
+text = "Start"
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 445.0
+offset_right = 802.0
+offset_bottom = 530.0
+scale = Vector2(0.879998, 0.76)
+theme_override_fonts/normal_font = ExtResource("5_df05h")
+theme_override_font_sizes/normal_font_size = 48
+text = "Mementos"
+horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0

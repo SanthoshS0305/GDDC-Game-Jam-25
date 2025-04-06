@@ -2,6 +2,7 @@ extends Control
 @export var startScene: String
 
 func _on_start_pressed() -> void:
+    print("test")
     get_tree().change_scene_to_file(startScene)
 
 
