@@ -33,10 +33,9 @@ text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
 label_settings = SubResource("LabelSettings_ln1g0")
 autowrap_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 offset_left = -4.0
 offset_top = 348.0
 offset_right = 36.0
 offset_bottom = 388.0
 scale = Vector2(28.8409, 7.58292)
-color = Color(0.423651, 0.423651, 0.423651, 1)
