@@ -8,6 +8,7 @@ var direction = Vector2.ZERO
 func _ready() -> void:
 	direction.x = playerPos.x - self.position.x
 	direction.y = playerPos.y - self.position.y
+	self.rotation = direction.angle()
 
 func setTarget(position: Vector2):
 	playerPos = position

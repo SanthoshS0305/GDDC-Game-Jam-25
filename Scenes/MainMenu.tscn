@@ -11,6 +11,7 @@ script = ExtResource("1_8saeu")
 startScene = "res://Scenes/Levels/Denial.tscn"
 
 [node name="Start" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 522.0
 offset_top = 252.0
 offset_right = 650.0
@@ -18,6 +19,7 @@ offset_bottom = 380.0
 texture_normal = ExtResource("1_tt5f1")
 
 [node name="Mementos" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 518.0
 offset_top = 416.0
 offset_right = 646.0

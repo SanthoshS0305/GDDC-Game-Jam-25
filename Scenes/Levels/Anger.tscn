@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://i1twp6nte1ga"]
+[gd_scene load_steps=4 format=3 uid="uid://i1twp6nte1ga"]
 
 [ext_resource type="Script" uid="uid://c6utlk3glxo1" path="res://Scripts/manager.gd" id="1_rxub5"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_1kip8"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="2_es51h"]
 
 [node name="Anger" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_rxub5")
@@ -38,6 +39,11 @@ endDialogue = Array[Dictionary]([{
 "speaker": "Mirabelle",
 "text": "That's everyone. Now where did this fucker Colin go?"
 }])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("2_es51h")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_1kip8")]
 position = Vector2(602, 352)

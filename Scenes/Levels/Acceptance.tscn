@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwg3cxpx173tw"]
+[gd_scene load_steps=5 format=3 uid="uid://bwg3cxpx173tw"]
 
 [ext_resource type="Script" uid="uid://dpjbn0p3q4f6y" path="res://Scripts/bossFightManager.gd" id="1_vuna4"]
 [ext_resource type="PackedScene" uid="uid://bddraxivbkwkb" path="res://Scenes/boss.tscn" id="2_afrm6"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="3_swx7s"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="4_py0nv"]
 
 [node name="Acceptance" type="Node2D" node_paths=PackedStringArray("player", "boss")]
 script = ExtResource("1_vuna4")
@@ -78,6 +79,11 @@ endDialogue = Array[Dictionary]([{
 "speaker": "Mirabelle",
 "text": "God. What have I done? Colin, I'm so, so sorry."
 }])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("4_py0nv")
 
 [node name="Boss" parent="." instance=ExtResource("2_afrm6")]
 position = Vector2(869, 334)
