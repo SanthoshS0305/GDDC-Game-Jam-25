@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca4soxhxwvorl"]
+
+[ext_resource type="Script" uid="uid://d23r3srygpoax" path="res://Scripts/conclusion.gd" id="1_70ssd"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="1_o8sv5"]
+[ext_resource type="PackedScene" uid="uid://cgfmkydavwxr4" path="res://StartScene/4WayPlayer.tscn" id="2_70ssd"]
+[ext_resource type="PackedScene" uid="uid://dayw1haifw2xo" path="res://StartScene/Interactable shit/gun.tscn" id="4_70ssd"]
+
+[node name="Conclusion" type="Node2D" node_paths=PackedStringArray("gun", "player")]
+script = ExtResource("1_70ssd")
+gun = NodePath("StaticBody2D")
+player = NodePath("4WayPlayer")
+dialogue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "And then she woke up."
+}, {
+"speaker": "Mirabelle",
+"text": "I'm sorry, Colin."
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed."
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? I should check it out, but I should be careful."
+}])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("1_o8sv5")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("4_70ssd")]
+position = Vector2(1297, 1013)
+
+[node name="4WayPlayer" parent="." instance=ExtResource("2_70ssd")]
+position = Vector2(507, 534)

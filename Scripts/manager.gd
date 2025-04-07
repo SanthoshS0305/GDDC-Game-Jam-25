@@ -31,7 +31,7 @@ func _ready() -> void:
 	enemy = load("res://Scenes/" + enemyType + ".tscn")
 	player.victory.connect(victory)
 	player.died.connect(defeat)
-	Global.currentStage = curLevel
+	Global._setLevel(curLevel)
 	var dialogue_instance = DialogueSys.instantiate()
 	add_child(dialogue_instance)
 	dialogue_instance.start_dialogue(startDialogue)
@@ -74,8 +74,7 @@ func victory():
 	dialogue_instance.dialogueComplete.connect(moveToNext)
 
 func defeat():
-	get_tree().change_scene_to_file("res://Scenes/Levels/Defeat.tscn")
-	print("Whomp whomp")
+	call_deferred("toDefeatScreen")
 
 func startLevel():
 	active = true
@@ -84,3 +83,6 @@ func startLevel():
 
 func moveToNext():
 	get_tree().change_scene_to_file(nextLevel)
+
+func toDefeatScreen():
+	get_tree().change_scene_to_file("res://Scenes/Levels/Defeat.tscn")

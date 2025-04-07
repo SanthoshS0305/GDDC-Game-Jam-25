@@ -1,14 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://bobityylpyrfc"]
+[gd_scene load_steps=4 format=3 uid="uid://bobityylpyrfc"]
 
 [ext_resource type="Script" uid="uid://c6utlk3glxo1" path="res://Scripts/manager.gd" id="1_75xwc"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_dd4vs"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="3_5tyll"]
 
 [node name="Depression" type="Node2D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_75xwc")
 player = NodePath("Player")
-enemyType = "sneaky"
+enemyType = "gunner"
 curLevel = 3
 nextLevel = "res://Scenes/Levels/Acceptance.tscn"
+startDialogue = Array[Dictionary]([{
+"speaker": "Narrator",
+"text": "And then she woke up."
+}, {
+"speaker": "Mirabelle",
+"text": "Colin isn't coming back, is he? Did I - did I do something? Was I not enough? Why'd he leave me?"
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed"
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? Is Colin back? Who am I kidding. He's never coming back. It might be a robbery. I need my gun. It should be in the cabinet."
+}, {
+"speaker": "Mirabelle",
+"text": "Oh, god. Are these... Are these Colin's glasses? God, what happened to him? Colin, my love, what happened? Where have you gone? Why have you been away so long? What happened to you?"
+}, {
+"speaker": "Narrator",
+"text": "Memento Found: Colin's Broken Glasses."
+}, {
+"speaker": "Mirabelle",
+"text": "Here's the gun. Now what's that noise about?"
+}, {
+"speaker": "Mirabelle",
+"text": "Is that... me? Why is she holding a gun? All of you are - me? What's going on here?"
+}])
+endDialogue = Array[Dictionary]([{
+"speaker": "Mirabelle",
+"text": "Even I want me dead, why would Colin ever want me?"
+}])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("3_5tyll")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_dd4vs")]
 position = Vector2(602, 352)

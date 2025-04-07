@@ -73,8 +73,8 @@ func takeDamage():
 	if timeSinceLastHit > invulnerable:
 		hp -= 1
 		if (hp <= 0):
-			print("victory")
 			victory.emit()
+			queue_free()
 		timeSinceLastHit = 0
 		var leftOrRight = randomizer.randi_range(0, 1)
 		var upOrDown = randomizer.randi_range(0, 1)

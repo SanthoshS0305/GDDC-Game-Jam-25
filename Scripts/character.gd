@@ -7,7 +7,7 @@ var speed: float = 320.0
 var bullet_path = preload("res://Scenes/bullet.tscn")
 var killedEnemies = 0
 #For controlling player's avaliabe actions during the level
-var can_shoot = true
+var can_shoot = false
 var inDialogue = true
 #Number of enemies to kil to pass the level
 var victoryCondition = 10

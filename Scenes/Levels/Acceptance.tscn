@@ -1,26 +1,90 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwg3cxpx173tw"]
+[gd_scene load_steps=5 format=3 uid="uid://bwg3cxpx173tw"]
 
 [ext_resource type="Script" uid="uid://dpjbn0p3q4f6y" path="res://Scripts/bossFightManager.gd" id="1_vuna4"]
 [ext_resource type="PackedScene" uid="uid://bddraxivbkwkb" path="res://Scenes/boss.tscn" id="2_afrm6"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="3_swx7s"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="4_py0nv"]
 
 [node name="Acceptance" type="Node2D" node_paths=PackedStringArray("player", "boss")]
 script = ExtResource("1_vuna4")
 player = NodePath("Player")
 boss = NodePath("Boss")
 curLevel = 4
+nextLevel = "res://Scenes/Levels/Conclusion.tscn"
 startDialogue = Array[Dictionary]([{
-"speaker": "MC",
-"text": "Nice"
+"speaker": "Narrator",
+"text": "And then she woke up."
+}, {
+"speaker": "Mirabelle",
+"text": "I can't keep doing this. This cycle - it's ruining me."
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed"
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? *Sigh* I suppose there's someone downstairs? Surely not Colin. I should check it out, but I need to be prepared."
+}, {
+"speaker": "Mirabelle",
+"text": "It's the scarf that Colin gave me for my birthday. He knows I get cold in the winters. He was so thoughtful... yet he was still taken away from me."
+}, {
+"speaker": "Narrator",
+"text": "Memento Found: Mirabelle's Warm Scarf."
+}, {
+"speaker": "Mirabelle",
+"text": "I guess I don't have a choice but to look."
+}, {
+"speaker": "Mirabelle",
+"text": "What? Why won't you just leave me alone? What do you want - Colin?"
+}, {
+"speaker": "Colin",
+"text": "Mira, you have to let me go."
+}, {
+"speaker": "Mirabelle",
+"text": "What do you mean? You're back - we're back. It can all go back to normal again."
+}, {
+"speaker": "Colin",
+"text": "It can never go back to normal again, Mira. You know this as well as I do."
+}, {
+"speaker": "Mirabelle",
+"text": "But how? How do I go on without you? Look at me! I'm a mess! I can barely get out of bed every day."
+}, {
+"speaker": "Colin",
+"text": "You'll find a way. You have to. This is your new normal. You have to learn to live with it."
+}, {
+"speaker": "Mirabelle",
+"text": "No - I can't. Not without you."
+}, {
+"speaker": "Colin",
+"text": "I'm sorry I left you, but if you can't let me go, then I have to force your hand. I'm going to make you kill me."
+}, {
+"speaker": "Mirabelle",
+"text": "What?"
 }])
 firstStage = Array[Dictionary]([{
-"speaker": "MC",
-"text": "First Phase"
+"speaker": "Mirabelle",
+"text": "Colin! Stop! What are you doing?!"
+}, {
+"speaker": "Colin",
+"text": "Just do it! Just kill me Mira! It's the only way either of us can find peace!"
+}, {
+"speaker": "Mira",
+"text": "I can't! You know I can't!"
+}, {
+"speaker": "Colin",
+"text": "You have to! There's no other way."
+}, {
+"speaker": "Mirabelle",
+"text": "... ... Fine."
 }])
 endDialogue = Array[Dictionary]([{
-"speaker": "MC",
-"text": "finish"
+"speaker": "Mirabelle",
+"text": "God. What have I done? Colin, I'm so, so sorry."
 }])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("4_py0nv")
 
 [node name="Boss" parent="." instance=ExtResource("2_afrm6")]
 position = Vector2(869, 334)
@@ -29,6 +93,7 @@ position = Vector2(869, 334)
 position = Vector2(241, 334)
 
 [node name="FirstPhase" type="Timer" parent="."]
+wait_time = 20.0
 one_shot = true
 
 [connection signal="timeout" from="FirstPhase" to="." method="_on_first_phase_timeout"]

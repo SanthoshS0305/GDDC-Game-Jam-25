@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwyny3rn2n08f"]
+[gd_scene load_steps=4 format=3 uid="uid://bwyny3rn2n08f"]
 
 [ext_resource type="Script" uid="uid://c6utlk3glxo1" path="res://Scripts/manager.gd" id="1_oi44p"]
+[ext_resource type="Texture2D" uid="uid://cn1rvggo46ogm" path="res://Artwork/level_room.png" id="2_71e8c"]
 [ext_resource type="PackedScene" uid="uid://crf84xve5a3bn" path="res://Scenes/player.tscn" id="2_qqhbm"]
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("player")]
@@ -9,13 +10,39 @@ player = NodePath("Player")
 enemyType = "robber"
 nextLevel = "res://Scenes/Levels/Anger.tscn"
 startDialogue = Array[Dictionary]([{
-"speaker": "MC",
-"text": "Testing 123"
+"speaker": "Narrator",
+"text": "Mirabelle wakes in bed."
+}, {
+"speaker": "Mirabelle",
+"text": "*Yawns* What time is it? Is Colin home yet?"
+}, {
+"speaker": "Narrator",
+"text": "Gets out of bed."
+}, {
+"speaker": "Mirabelle",
+"text": "What's that noise? Is there someone in the house? Colin shouldn't be home yet. I need my gun. It should be in the cabinet."
+}, {
+"speaker": "Mirabelle",
+"text": "Ooh is that Colin's watch? He must have forgotten it."
+}, {
+"speaker": "Narrator",
+"text": "Memento Found: Colin's Cracked Watch."
+}, {
+"speaker": "Mirabelle",
+"text": "Here's the gun! I'm going to go check out that noise."
+}, {
+"speaker": "Mirabelle",
+"text": "What? A bunch of people are breaking into my house! I need to kill them before Colin gets home."
 }])
 endDialogue = Array[Dictionary]([{
-"speaker": "cool",
-"text": "station"
+"speaker": "Mirabelle",
+"text": "That's everyone. Now when's Colin going to arrive?"
 }])
+
+[node name="Level" type="Sprite2D" parent="."]
+position = Vector2(612, 842)
+scale = Vector2(3, 3)
+texture = ExtResource("2_71e8c")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("2_qqhbm")]
 position = Vector2(613.602, 110.543)

@@ -1,17 +1,61 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgfmkydavwxr4"]
+[gd_scene load_steps=10 format=3 uid="uid://cgfmkydavwxr4"]
 
 [ext_resource type="Script" uid="uid://p7h207vigha0" path="res://StartScene/4_way_player.gd" id="1_0yqq1"]
-[ext_resource type="Texture2D" uid="uid://dev2mmkurxwq2" path="res://icon.svg" id="2_4ub40"]
+[ext_resource type="Texture2D" uid="uid://c1gs2nn06yjxv" path="res://Artwork/mc_front_standing.png" id="2_22mqi"]
+[ext_resource type="Texture2D" uid="uid://bf4hthcuw7ofq" path="res://Artwork/mc_back_left_walk.png" id="3_1sprq"]
+[ext_resource type="Texture2D" uid="uid://p2dorvav61gi" path="res://Artwork/mc_front_left_walk.png" id="3_20w6n"]
 [ext_resource type="PackedScene" uid="uid://c1mkgi2j2b0ne" path="res://StartScene/Interaction workings/interacting_component.tscn" id="3_le2gi"]
+[ext_resource type="Texture2D" uid="uid://c0k1qyhy6q2kg" path="res://Artwork/mc_front_right_walk.png" id="4_cnpb8"]
+[ext_resource type="Texture2D" uid="uid://b8n6mbc1msp7f" path="res://Artwork/mc_back_right_walk.png" id="4_emyho"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_21ax2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_22mqi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_20w6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cnpb8")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1sprq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_emyho")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jyy5"]
-size = Vector2(119.5, 121.5)
+size = Vector2(119.5, 144)
 
 [node name="4WayPlayer" type="CharacterBody2D"]
 script = ExtResource("1_0yqq1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_4ub40")
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1.5, 1.5)
+
+[node name="Animated" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_21ax2")
+animation = &"walk_down"
+frame = 1
+frame_progress = 0.00911744
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5jyy5")
