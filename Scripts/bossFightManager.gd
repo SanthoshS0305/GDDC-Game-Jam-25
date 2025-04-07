@@ -19,6 +19,7 @@ func _ready() -> void:
 	Global._setLevel(curLevel)
 	player.died.connect(defeat)
 	boss.victory.connect(victory)
+	player.get_node("RichTextLabel").visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

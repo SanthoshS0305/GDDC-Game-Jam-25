@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://c1dyl5xqysyaj" path="res://StartScene/Interactable shit/gun.gd" id="1_4echf"]
 [ext_resource type="Texture2D" uid="uid://dx6ajraa3jeya" path="res://Artwork/gun.png" id="2_xpuuu"]
 [ext_resource type="PackedScene" uid="uid://c35pf2ab3p2v2" path="res://StartScene/Interaction workings/Interactable.tscn" id="3_8jmmf"]
-[ext_resource type="PackedScene" uid="uid://8ruvomdy82vb" path="res://StartScene/DialogueSystem.tscn" id="4_dnnc4"]
+[ext_resource type="Texture2D" uid="uid://dosyvfnx3p6it" path="res://Artwork/f_prompt.png" id="4_xpuuu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dc5p0"]
 size = Vector2(262, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3oxb"]
-size = Vector2(310, 224)
+size = Vector2(533.75, 411.25)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_4echf")
@@ -22,13 +22,21 @@ shape = SubResource("RectangleShape2D_dc5p0")
 texture = ExtResource("2_xpuuu")
 
 [node name="Interactable" parent="." instance=ExtResource("3_8jmmf")]
-collision_mask = 512
-interact_name = "grab gun"
+collision_layer = 513
+collision_mask = 513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
 light_mask = 3
 visibility_layer = 2
+position = Vector2(0.500008, -0.500004)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_t3oxb")
 
-[node name="Dialouge" parent="." instance=ExtResource("4_dnnc4")]
+[node name="FPrompt" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1, -62)
+scale = Vector2(3, 3)
+texture = ExtResource("4_xpuuu")
+
+[connection signal="area_entered" from="Interactable" to="." method="_on_interactable_area_entered"]
+[connection signal="area_exited" from="Interactable" to="." method="_on_interactable_area_exited"]

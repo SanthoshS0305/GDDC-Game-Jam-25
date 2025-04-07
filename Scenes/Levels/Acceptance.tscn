@@ -10,6 +10,7 @@ script = ExtResource("1_vuna4")
 player = NodePath("Player")
 boss = NodePath("Boss")
 curLevel = 4
+nextLevel = "res://Scenes/Levels/Conclusion.tscn"
 startDialogue = Array[Dictionary]([{
 "speaker": "Narrator",
 "text": "And then she woke up."
@@ -92,6 +93,7 @@ position = Vector2(869, 334)
 position = Vector2(241, 334)
 
 [node name="FirstPhase" type="Timer" parent="."]
+wait_time = 20.0
 one_shot = true
 
 [connection signal="timeout" from="FirstPhase" to="." method="_on_first_phase_timeout"]

@@ -7,5 +7,5 @@ func _on_start_pressed() -> void:
 
 
 func _on_mementos_pressed() -> void:
-    if (Global.unlockedLevels > 0):
+    if (Global.unlockedLevels > -1):
         get_tree().change_scene_to_file("res://Scenes/Mementos.tscn")

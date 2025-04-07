@@ -6,10 +6,9 @@
 
 [node name="Mementos" type="Node2D" node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_70uma")
-buttons = [NodePath("Denial"), NodePath("Anger"), NodePath("Bargaining"), NodePath("Depression"), NodePath("Acceptance")]
+buttons = [NodePath("Denial"), NodePath("Anger"), NodePath("Bargaining"), NodePath("Depression"), NodePath("Acceptance"), NodePath("Conclusion")]
 
 [node name="Denial" type="TextureButton" parent="."]
-visible = false
 offset_left = 498.0
 offset_top = 353.0
 offset_right = 626.0
@@ -18,7 +17,6 @@ scale = Vector2(1.53737, 0.913484)
 texture_normal = ExtResource("1_4ctuo")
 
 [node name="Anger" type="TextureButton" parent="."]
-visible = false
 offset_left = 185.0
 offset_top = 348.0
 offset_right = 313.0
@@ -27,7 +25,6 @@ scale = Vector2(1.32, 1)
 texture_normal = ExtResource("1_4ctuo")
 
 [node name="Bargaining" type="TextureButton" parent="."]
-visible = false
 offset_left = 130.0
 offset_top = 82.0
 offset_right = 258.0
@@ -35,21 +32,27 @@ offset_bottom = 210.0
 texture_normal = ExtResource("1_4ctuo")
 
 [node name="Depression" type="TextureButton" parent="."]
-visible = false
-offset_left = 861.0
-offset_top = 60.0
-offset_right = 989.0
-offset_bottom = 188.0
-scale = Vector2(1.19384, 2.07956)
+offset_left = 803.0
+offset_top = 338.0
+offset_right = 931.0
+offset_bottom = 466.0
+scale = Vector2(1.48645, 0.729196)
 texture_normal = ExtResource("1_4ctuo")
 
 [node name="Acceptance" type="TextureButton" parent="."]
-visible = false
-offset_left = 492.0
-offset_top = 47.0
-offset_right = 620.0
-offset_bottom = 175.0
-scale = Vector2(1.36, 1)
+offset_left = 867.0
+offset_top = 62.0
+offset_right = 995.0
+offset_bottom = 190.0
+scale = Vector2(1.36, 2.04)
+texture_normal = ExtResource("1_4ctuo")
+
+[node name="Conclusion" type="TextureButton" parent="."]
+offset_left = 511.0
+offset_top = 33.0
+offset_right = 639.0
+offset_bottom = 161.0
+scale = Vector2(1.36, 0.866838)
 texture_normal = ExtResource("1_4ctuo")
 
 [node name="MementoWall" type="Sprite2D" parent="."]
@@ -62,3 +65,4 @@ texture = ExtResource("3_h1e4f")
 [connection signal="pressed" from="Bargaining" to="." method="_on_bargaining_pressed"]
 [connection signal="pressed" from="Depression" to="." method="_on_depression_pressed"]
 [connection signal="pressed" from="Acceptance" to="." method="_on_acceptance_pressed"]
+[connection signal="pressed" from="Conclusion" to="." method="_on_conclusion_pressed"]

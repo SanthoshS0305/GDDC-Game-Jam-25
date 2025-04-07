@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1mkgi2j2b0ne"]
+[gd_scene load_steps=5 format=3 uid="uid://c1mkgi2j2b0ne"]
 
 [ext_resource type="Script" uid="uid://k0xtb5415ib6" path="res://StartScene/Interaction workings/interacting_component.gd" id="1_8sn01"]
+[ext_resource type="Texture2D" uid="uid://dosyvfnx3p6it" path="res://Artwork/f_prompt.png" id="2_nphbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnile"]
 size = Vector2(54, 52)
@@ -30,6 +31,10 @@ label_settings = SubResource("LabelSettings_ah18y")
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Interact Label"]
+position = Vector2(47, 36.1991)
+texture = ExtResource("2_nphbb")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

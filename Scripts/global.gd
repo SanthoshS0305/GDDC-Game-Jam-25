@@ -1,8 +1,9 @@
 extends Node
 
-var stages = ["res://Scenes/Levels/Denial.tscn", "res://Scenes/Levels/Anger.tscn", "res://Scenes/Levels/Bargaining.tscn", "res://Scenes/Levels/Depression.tscn", "res://Scenes/Levels/Acceptance.tscn"]
+var stages = ["res://Scenes/Levels/Denial.tscn", "res://Scenes/Levels/Anger.tscn", "res://Scenes/Levels/Bargaining.tscn", "res://Scenes/Levels/Depression.tscn", "res://Scenes/Levels/Acceptance.tscn"
+              , "res://Scenes/Levels/Conclusion.tscn"]
 var currentStage: int
-var unlockedLevels = 0
+var unlockedLevels = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
