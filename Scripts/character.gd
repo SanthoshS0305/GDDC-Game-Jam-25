@@ -31,6 +31,8 @@ func _physics_process(delta):
 			direction.y += 1
 		if Input.is_action_pressed("up"):
 			direction.y -= 1
+		if Input.is_action_pressed("dash"):
+			direction.y += 5
 	
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
@@ -42,7 +44,7 @@ func _physics_process(delta):
 	
 	look_at(get_global_mouse_position())
 
-	if Input.is_action_pressed("mouse_left") && can_shoot: # Ensure "mouse_left" is mapped in InputMap
+	if Input.is_action_pressed("mouse_left") && can_shoot:
 		if can_shoot == true:
 			shoot()
 			can_shoot = false
